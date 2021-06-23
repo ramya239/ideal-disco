@@ -1,0 +1,36 @@
+package com.ramyaju.junit.helper;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StringHelperTest {
+
+	@Test
+	public void test() {
+		StringHelper sh = new StringHelper();
+		assertEquals("21", sh.truncate0InFirst2Positions("0021"));
+		assertEquals("21", sh.truncate0InFirst2Positions("021"));
+	}
+	
+	@Test 
+	public void test2() {
+		StringHelper sh = new StringHelper();
+		assertEquals("210",sh.truncate0InFirst2Positions("210") );
+		
+	}
+	
+	@Test 
+	public void test3() {
+		StringHelper sh = new StringHelper();
+		assertEquals("2134", sh.truncate0InFirst2Positions("2134"));
+		
+	}
+	
+	@Test 
+	public void test4() {
+		StringHelper sh = new StringHelper();
+		assertEquals("", sh.truncate0InFirst2Positions("00"));
+	}
+
+}
